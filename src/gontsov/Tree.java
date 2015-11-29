@@ -124,4 +124,42 @@ public class Tree {
         }
         arr = baseArray;
     }
+
+
+    public int leafs() {
+        leafs(root);
+        return this.index;
+    }
+
+    private void leafs(Node node) {
+        if (node == null) {
+            return;
+        }
+        if(node.leftChild == null) {
+            this.index++;
+        }
+        leafs(node.leftChild);
+        leafs(node.rightChild);
+    }
+
+    public int width(){
+        int maxWidth = 0;
+        for (int k = 0; k < height(); k++) {
+            int width = width(root, k);
+            if (width > maxWidth)
+                maxWidth = width;
+        }
+        return maxWidth;
+    }
+
+    private int width(Node node, int depth) {
+        if(node == null)
+            return 0;
+        if(depth == 0 )
+            return 1;
+        else
+            return width(node.leftChild,depth-1) + width(node.rightChild,depth-1);
+
+
+    }
 }

@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         Tree theTree = new Tree();
-        theTree.init(new int[]{40,50,60,70,80,30,20,10,55,4,3,2});
+        theTree.init(new int[]{40,30,50,25,35,45,55,20,29});
         theTree.print();
         System.out.println("");
         System.out.println("size = " + theTree.size());
@@ -15,5 +15,7 @@ public class Main {
         theTree.print();
         System.out.println("");
         System.out.println(Arrays.toString(theTree.toArray()));
+        System.out.println("leafs = " + theTree.leafs());
+        System.out.println("width = " + theTree.width());
     }
 }
